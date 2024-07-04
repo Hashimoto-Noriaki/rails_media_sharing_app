@@ -1,5 +1,5 @@
 # ベースイメージの指定
-FROM ruby:3.1.2
+FROM ruby:3.1.3
 
 # 必要なパッケージのインストール
 RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
