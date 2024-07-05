@@ -1,10 +1,10 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: db
-  username: postgres
-  password: password
-  pool: 5
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV["POSTGRES_USER"] %>
+  password: <%= ENV["POSTGRES_PASSWORD"] %>
+  host: <%= ENV["DATABASE_HOST"] %>
 
 development:
   <<: *default
@@ -17,5 +17,6 @@ test:
 production:
   <<: *default
   database: rails_media_sharing_app_production
-  username: rails_media_sharing_app
-  password: <%= ENV['RAILS_MEDIA_SHARING_APP_DATABASE_PASSWORD'] %>
+  username: <%= ENV["POSTGRES_USER"] %>
+  password: <%= ENV["RAILS_MEDIA_SHARING_APP_DATABASE_PASSWORD"] %>
+  host: <%= ENV["DATABASE_HOST"] %>
