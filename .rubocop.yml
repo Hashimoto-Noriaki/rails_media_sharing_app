@@ -1,0 +1,80 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  TargetRubyVersion: 3.1   # Rubyのターゲットバージョンを指定
+
+  Exclude:
+    - 'init/**/*'
+    - 'bin/**/*'
+    - 'Rakefile'
+    - 'config.ru'
+    - 'config/boot.rb'
+    - 'config/puma.rb'
+    - 'db/schema.rb'
+    - 'vendor/**/*'
+
+  # 修正案や改善案を提案しない
+  SuggestExtensions: false
+  # 最新のルールを適用する
+  NewCops: enable
+  # 何のルールに引っかかったか表示する
+  DisplayCopNames: true
+
+# 機能ごとにgemをまとめているため、アルファベット順にしない
+Bundler/OrderedGems:
+  Enabled: false
+
+# メソッドをグループ分けして書き順を揃えておくと読みやすくなる
+Layout/ClassStructure:
+  Enabled: true
+
+# コメントのインデントが正しいかどうかを確認し、コメントのインデントの修正を自動的に行わないようにする
+Layout/CommentIndentation:
+  AutoCorrect: false
+
+# 自動修正を実施した際、不適切な修正があったため、autocorrectableの対象にしない
+Layout/MultilineArrayBraceLayout:
+  AutoCorrect: false
+
+# RSpecは1つのブロックあたりの行数が多くなるため、チェックの除外から外す
+# ブロック内の行数をチェックする
+Metrics/BlockLength:
+  Exclude:
+    - "spec/**/*"
+    - 'config/environments/development.rb'
+    - 'config/environments/production.rb'
+
+# ifやforなどを1メソッド内で使いすぎていないかチェック
+Metrics/CyclomaticComplexity:
+  Max: 10
+
+# メソッドの行数が多すぎないかをチェック
+Metrics/MethodLength:
+  Max: 20
+
+# ネストが深すぎないかをチェック（if文のネストもチェック）
+Metrics/BlockNesting:
+  Max: 5
+
+# クラスの行数をチェック（無効）
+Metrics/ClassLength:
+  Enabled: false
+
+# 日本語でのコメントを許可
+Style/AsciiComments:
+  Enabled: false
+
+# クラスやモジュール定義前に、それらの説明書きがあるかをチェック（無効）
+Style/Documentation:
+  Enabled: false
+
+# 凍結リテラルコメントの有効化を無効にする
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# 標準ストリームのグローバル変数を許可する
+Style/GlobalStdStream:
+  Enabled: false
