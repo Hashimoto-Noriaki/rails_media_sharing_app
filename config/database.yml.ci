@@ -1,10 +1,10 @@
- environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: rails_media_sharing_app_test
-  web:
-    build: .
-    command: bundle exec rails s -b '0.0.0.0'
+environment:
+    POSTGRES_USER: postgres
+    POSTGRES_PASSWORD: password
+    POSTGRES_DB: rails_media_sharing_app_test
+web:
+  build: .
+  command: bundle exec rails s -b '0.0.0.0'
 
 default: &default
   adapter: postgresql
@@ -17,3 +17,9 @@ default: &default
 test:
   <<: *default
   database: rails_media_sharing_app_test
+
+production:
+  <<: *default
+  database: rails_media_sharing_app_production
+  username: rails_media_sharing_app_prod_user
+  password: <%= ENV['RAILS_MEDIA_SHARING_APP_DATABASE_PASSWORD'] %>

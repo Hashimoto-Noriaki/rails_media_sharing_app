@@ -17,3 +17,9 @@ default: &default
 test:
   <<: *default
   database: rails_media_sharing_app_test
+
+production:
+  <<: *default
+  database: rails_media_sharing_app_production
+  username: rails_media_sharing_app_prod_user
+  password: <%= ENV['RAILS_MEDIA_SHARING_APP_DATABASE_PASSWORD'] %>
