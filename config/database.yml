@@ -6,11 +6,10 @@ web:
   build: .
   command: bundle exec rails s -b '0.0.0.0'
 
-
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: db
+  host: rails_media_sharing_app-db-1
   username: postgres
   password: postgres
   pool: 5
