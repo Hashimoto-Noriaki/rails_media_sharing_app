@@ -20,7 +20,6 @@ module RailsMediaSharingApp
     # config.eager_load_paths << Rails.root.join("extras")
     # Set the default time zone
     config.time_zone = 'Tokyo'
-    
     config.generators do |g|
       g.jbuilder false
       g.javascripts false
