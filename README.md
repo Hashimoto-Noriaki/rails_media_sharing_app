@@ -1,3 +1,9 @@
+### pushする前に以下を実行
+```
+docker compose run web bundle exec rubocop -A
+```
+
+
 ### bundle install
 ```
 docker compose run web bundle install
