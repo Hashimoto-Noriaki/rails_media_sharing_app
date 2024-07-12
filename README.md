@@ -18,6 +18,7 @@ docker compose down
 ```
 docker compose run web bash  
 ```
+コンテナに入ったらdocker compose run webは不要
 
 ### サーバー起動とDB
 - DB作成
@@ -64,4 +65,27 @@ RSpec起動
 docker compose run web bundle exec rspec
 ```
 
+### フロント側
+ReactかVue.jsでリプレース予定
 
+### GitHubActions
+develpmentからmasterへpushするタイミング
+
+### インフラ環境、デプロイ環境GCP
+クラウド
+- CloudRun
+- CloudRunJobs
+- CloudBuild
+- ArtifactRegistry
+
+### なぜこの構成か
+月10円とかで運用できて、経費削減できるため
+
+### Cloud Run
+アプリのデプロイ先 (Dockerイメージを元に実行)
+
+### CloudRunJobs
+バッチ処理用のアプリをデプロイして定期実行するもの(Dockerイメージを元に実行)
+
+### ArtifactRegistry
+Dockerのコンテナイメージの保管先 (このイメージを元にCloudRunやCloudRunJobsにデプロイする)
