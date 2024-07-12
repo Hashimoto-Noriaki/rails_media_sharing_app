@@ -78,6 +78,11 @@ develpmentからmasterへpushするタイミング
 - CloudBuild
 - ArtifactRegistry
 
+### サーバー起動中の解除
+```
+rm tmp/pids/server.pid
+```
+
 ### なぜこの構成か
 月10円とかで運用できて、経費削減できるため
 
