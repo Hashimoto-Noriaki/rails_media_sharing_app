@@ -70,6 +70,7 @@ ReactかVue.jsでリプレース予定
 
 ### GitHubActions
 develpmentからmasterへpushするタイミング
+rubocopの起動を自動化
 
 ### インフラ環境、デプロイ環境GCP
 クラウド
