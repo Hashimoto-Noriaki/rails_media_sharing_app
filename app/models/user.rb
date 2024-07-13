@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-        :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable
 
   validates :name, presence: true, length: { maximum: 255 }
   # URI::MailTo::EMAIL_REGEXPは、RubyのライブラリのURIモジュールに定義されている正規表現。メールアドレスの形式を検証するために使用

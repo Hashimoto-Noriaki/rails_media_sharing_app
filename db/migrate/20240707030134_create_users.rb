@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :email
       t.datetime :email_verified_at, null: true
-      t.string :encrypted_password# Deviseは encrypted_password を使用
+      t.string :encrypted_password # Deviseは encrypted_password を使用
       t.string :remember_token
       t.timestamps
       t.datetime :deleted_at, null: true # 追記: soft delete用のカラム
