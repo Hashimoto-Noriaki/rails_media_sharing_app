@@ -18,7 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_07_12_112030) do
     t.string "name"
     t.string "email"
     t.datetime "email_verified_at", precision: nil
-    t.string "password_digest"
+    t.string "encrypted_password"
     t.string "remember_token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -27,6 +27,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_07_12_112030) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end
