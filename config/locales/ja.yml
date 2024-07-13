@@ -1,4 +1,5 @@
 ja:
   users_controller:
     email_already_registered: 'このメールアドレスはすでに登録されています。'
-    user_created_successfully: 'ユーザーが正常に登録されました。'
+    user_created_successfully: 'あなたのデータが登録されました。'
+
