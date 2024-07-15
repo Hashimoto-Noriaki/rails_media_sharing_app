@@ -36,6 +36,11 @@ docker compose　run web rails s
 docker compose　run web rails server
 ```
 
+- シーダー実行
+```
+docker compose　run web rails db:seed
+```
+
 http://127.0.0.1:3000/
 ### Gemfileに追記したら
 1.
