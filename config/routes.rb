@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
-    registrations: 'users/registrations'
-    # 他のDeviseコントローラがあればここに追加する場合もあります
+    registrations: 'users/registrations',
+    sessions: 'users/sessions'
   }
 
   resources :users
