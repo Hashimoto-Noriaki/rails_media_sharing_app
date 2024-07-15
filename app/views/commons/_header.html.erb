@@ -1,3 +1,5 @@
+<!-- app/views/commons/_header.html.erb -->
+
 <header class="mb-5">
   <nav class="navbar navbar-expand-sm navbar-dark bg-info">
     <a class="navbar-brand" href="/">メディアシェアサイト<br>&ensp;コンテンツ共有プラットフォーム</a>
@@ -7,8 +9,21 @@
     <div class="collapse navbar-collapse" id="nav-bar">
       <ul class="navbar-nav mr-auto"></ul>
       <ul class="navbar-nav">
-        <li class="nav-item"><a href="<%= signup_path %>" class="nav-link">新規登録</a></li>
-        <li class="nav-item"><a href="" class="nav-link">ログイン</a></li>
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to 'マイページ', edit_user_registration_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to '新規登録', signup_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'ログイン', new_user_session_path, class: 'nav-link' %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </nav>
