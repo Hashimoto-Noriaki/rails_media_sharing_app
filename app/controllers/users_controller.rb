@@ -42,7 +42,7 @@ class UsersController < ApplicationController
   # DELETE /users/1 or /users/1.json
   def destroy
     @user.destroy
-    redirect_to users_url, notice: t('notices.user_destroyed')
+    redirect_to users_url
   end
 
   private
