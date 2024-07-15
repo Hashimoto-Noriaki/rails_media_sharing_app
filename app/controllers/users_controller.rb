@@ -7,7 +7,9 @@ class UsersController < ApplicationController
   end
 
   # GET /users/1 or /users/1.json
-  def show; end
+  def show
+    # @user は before_action :set_user で設定済み
+  end
 
   # GET /users/new
   def new
@@ -15,7 +17,9 @@ class UsersController < ApplicationController
   end
 
   # GET /users/1/edit
-  def edit; end
+  def edit
+    # @user は before_action :set_user で設定済み
+  end
 
   # POST /users or /users.json
   def create
@@ -32,32 +36,25 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1 or /users/1.json
   def update
-    respond_to do |format|
-      if @user.update(user_params)
-        format.html { redirect_to user_url(@user), notice: t('notices.user_created') }
-        format.json { render :show, status: :ok, location: @user }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
-    end
+    # @user は before_action :set_user で設定済み
   end
 
   # DELETE /users/1 or /users/1.json
   def destroy
     @user.destroy
-
-    respond_to do |format|
-      format.html { redirect_to users_url, notice: t('notices.user_created') }
-      format.json { head :no_content }
-    end
+    redirect_to users_url
   end
 
   private
 
   # Use callbacks to share common setup or constraints between actions.
   def set_user
-    @user = User.find(params[:id])
+    if params[:id] == 'sign_out'
+      sign_out current_user  # ログアウト処理を行う
+      redirect_to root_path  # ルートにリダイレクトする例
+    else
+      @user = User.find(params[:id])
+    end
   end
 
   # Only allow a list of trusted parameters through.
