@@ -53,6 +53,14 @@ docker compose run web bundle install
 or
 docker compose run web bundle update
 ```
+- Dockerの履歴が見れるファイル
+```
+config/lib/development.log
+```
+- Dockerの掃除
+```
+docker system prune -a
+```
 
 ### RuboCop
 RuboCop起動
