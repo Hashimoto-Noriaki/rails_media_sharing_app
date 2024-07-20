@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   # GET /users or /users.json
   def index
+    @users = User.order('id DESC')
     render 'welcome'
   end
 

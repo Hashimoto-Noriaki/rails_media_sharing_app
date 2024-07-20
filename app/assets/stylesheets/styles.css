@@ -1,0 +1,8 @@
+/* app/assets/stylesheets/styles.css */
+.article > p {
+    height: 80px;
+    width: 300px;
+  }
+  .button {
+    width: 300px;
+  }
