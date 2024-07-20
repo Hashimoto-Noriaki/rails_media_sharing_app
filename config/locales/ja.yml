@@ -1,5 +1,11 @@
 ja:
-  users_controller:
+  users:
     email_already_registered: 'このメールアドレスはすでに登録されています。'
     user_created_successfully: 'あなたのデータが登録されました。'
-
+  articles:
+    create:
+      notice: 'Article was successfully created.'
+    update:
+      notice: 'Article was successfully updated.'
+    destroy:
+      notice: 'Article was successfully deleted.'

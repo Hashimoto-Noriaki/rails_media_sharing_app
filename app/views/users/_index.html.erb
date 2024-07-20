@@ -1,0 +1,23 @@
+<h2 class="mt-5 mb-5">ユーザー一覧</h2>
+<div class="users row mt-10 text-center">
+  <% @users.each_with_index do |user, index| %>
+    <% article = user.articles.order('created_at DESC').first %>
+    <% if index % 3 == 0 && index != 0 %>
+      </div>
+      <div class="row text-center mt-3">
+    <% end %>
+    <div class="col-lg-4 mb-5">
+      <div class="article text-left d-inline-block">
+        ＠<%= user.name %>
+        <div>
+          <% if article %>
+            <p><%= article.title %></p>
+            <p><%= article.content %></p>
+          <% else %>
+            <p>記事がありません</p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
