@@ -14,7 +14,9 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
-    @user = User.new
+    @article = Article.new
+    user = current_user
+    @articles = user.articles.order(id: :desc)
   end
 
   # GET /users/1/edit
