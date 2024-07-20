@@ -1,8 +1,13 @@
 class User < ApplicationRecord
   has_many :articles, dependent: :destroy
 
-  devise :database_authenticatable, :registerable,
-        :recoverable, :rememberable, :validatable
+  devise(
+    :database_authenticatable,
+    :registerable,
+    :recoverable,
+    :rememberable,
+    :validatable
+  )
 
   validates :name, presence: true, length: { maximum: 255 }
   # URI::MailTo::EMAIL_REGEXPは、RubyのライブラリのURIモジュールに定義されている正規表現。メールアドレスの形式を検証するために使用

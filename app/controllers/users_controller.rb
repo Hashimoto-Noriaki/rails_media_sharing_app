@@ -26,10 +26,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if User.exists?(email: @user.email)
-      flash[:error] = t('users_controller.email_already_registered')
+      flash[:error] = I18n.t('users.email_already_registered')
       render 'new'
     elsif @user.save
-      redirect_to root_path, notice: t('users_controller.user_created_successfully')
+      redirect_to root_path, notice: I18n.t('users.user_created_successfully')
     else
       render 'new'
     end
