@@ -78,3 +78,7 @@ Style/FrozenStringLiteralComment:
 # 標準ストリームのグローバル変数を許可する
 Style/GlobalStdStream:
   Enabled: false
+
+#contextの説明が特定の形式である必要がないようにする
+RSpec/ContextWording:
+  Enabled: false
